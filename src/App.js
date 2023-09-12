@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Note } from "./Note";
 
-function App() {
+// Реализовать интерфейс заметок
+// По кнопке + заметки должны добавляться
+// Поле ввода должно очищаться после добавления
+// Заметки должны хранится в стейте компонента
+// Note - компонент одной заметки
+// Заметки могут быть с одинаковыми названиями
+// Заметки должны удалятся по клику на Note
+// Заметки должны быть отсортированы по алфавиту
+// Количество заметок должно быть подсчитано в header
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <div className="header">{/* here must be number of notes */}</div>
+      <div className="container">
+        {/* button must add notes */}
+        <button>+</button>
 
-export default App;
+        <input type="text" className="textInput" autoFocus />
+
+        <div className="notes-container">{/* render notes here */}</div>
+      </div>
+    </>
+  );
+};
